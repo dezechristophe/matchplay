@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+<div >1/8 de finale
+<TABLE BORDER="1"> 
+
+  {% for mp in matchs %}
+    {% if mp.numero==1 %}<tr>{% endif %}	
+    <td>  
+    {% if mp.j1 != '' and mp.j2!='' %}
+	<A HREF="http://www.deze.fr/partie/{{  mp.numero }}">
+	{% if mp.trou!=0 %}
+	</h2>TROU N°{{ mp.trou }}
+	{% else %}
+	 non débuté 
+	{% endif %}
+        </A>
+	<br>{{ mp.j1  }} 
+	    {% if mp.score==0 %} 
+		AS 
+	    {% else %} 
+		{{ mp.score |abs }}  
+		{% if mp.score>0 %}
+			up
+		{% endif %} 
+		{% if mp.score<0 %}
+			down
+		{% endif %}
+    	     {% endif %} 
+	contre {{ mp.j2 }}
+    {% else %}
+	{% if mp.j1 != '' or mp.j2!='' %}
+	Qualifié potentiel {{ mp.j1 }} {{ mp.j2 }}
+	{% endif %} 
+    {% endif %} 
+    </td>
+     {% if mp.numero==4 %}</tr><tr>{% endif %}
+     {% if mp.numero==8 %}</tr><tr></TABLE>1/4 de finale<TABLE BORDER="1">{% endif %}
+     {% if mp.numero==10 %}</tr><tr>{% endif %}
+     {% if mp.numero==12 %}</tr><tr></TABLE>1/2 de finale<TABLE BORDER="1">{% endif %}
+     {% if mp.numero==13 %}</tr><tr>{% endif %}
+     {% if mp.numero==14 %}</tr><tr></TABLE>finale<TABLE BORDER="1">{% endif %}
+
+
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

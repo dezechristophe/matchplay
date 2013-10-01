@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>mp.html</title>
+  </head>
+  <body> 
+     <span style="font-size:100px"> joueurs : {{ joueurA }} - {{ joueurB }} </span>
+
+<br>
+<input type="submit" value=" - "  style="font-size:100px"
+    onclick="window.location='http://www.deze.fr/partie/{{ partie }}/trou/{{ trou }}/score/{{ score - 1}}';" style="height: 200px; width: 200px" />  
+     <span style="font-size:100px"> Score : {{ score }} </span>
+<input type="submit" value=" + " style="font-size:100px"
+     onclick="window.location='http://www.deze.fr/partie/{{ partie }}/trou/{{ trou }}/score/{{ score + 1}}';"  style="height: 200px; width: 200px" />
+<br>
+  
+<input type="submit" value=" - " style="font-size:100px"
+    onclick="window.location='http://www.deze.fr/partie/{{ partie }}/trou/{{ trou - 1 }}/score/{{ score }}';"  style="height: 200px; width: 200px" />
+    <span style="font-size:100px"> Trou : {{ trou }} </span> 
+<input type="submit" value=" + " style="font-size:100px"
+     onclick="window.location='http://www.deze.fr/partie/{{ partie }}/trou/{{ trou + 1 }}/score/{{ score }}';"  style="height: 200px; width: 200px" />
+
+
+</body>
+</html>
+
